@@ -39,6 +39,5 @@ YPred = predFunc(Xte);
 
 % Print out results
 predError = norm(YPred-Yte).^2/nTe;
-fprintf('MSE: %0.5f\nOrder chosen by CV: %d\nTraining time: %0.5f\n', ...
-  predError, addOrder, trainTime);
+fprintf('MSE: %0.5f\nOrder chosen by CV: %d\n', predError, addOrder);
 
