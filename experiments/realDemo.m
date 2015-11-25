@@ -6,19 +6,18 @@ close all;
 clear all;
 clc;
 addpath ../salsa/
-addpath ../utils/
 rng('default');
 warning off;
 
 % Select dataset
-dataset = 'housing';                  
-% dataset = 'galaxy';       
-% dataset = 'airfoil';
+dataset = 'galaxy';       
 % dataset = 'skillcraft';
+% dataset = 'airfoil';
 % dataset = 'CCPP';
-% dataset = 'speech';              
 % dataset = 'Insulin';
+% dataset = 'speech';              
 % dataset = 'forestfires';       
+% dataset = 'housing';                  
 % dataset = 'blog';       
 % dataset = 'music';                    
 % dataset = 'telemonitoring-total';
@@ -33,9 +32,9 @@ fprintf('Dataset: %s (n, D) = (%d, %d)\n', dataset, nTr, numDims);
 
 % Now run SALSA
 fprintf('Training with SALSA\n');
-startTime = cputime;
+tic,
 [predFunc, addOrder] = salsa(Xtr, Ytr);
-trainTime = cputime - startTime;
+toc,
 YPred = predFunc(Xte);
 
 % Print out results
