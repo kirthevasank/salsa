@@ -10,7 +10,7 @@ rng('default');
 warning off;
 
 % Select dataset
-dataset = 'galaxy';       
+% dataset = 'galaxy';       
 % dataset = 'skillcraft';
 % dataset = 'airfoil';
 % dataset = 'CCPP';
@@ -18,7 +18,7 @@ dataset = 'galaxy';
 % dataset = 'speech';              
 % dataset = 'forestfires';       
 % dataset = 'housing';                  
-% dataset = 'blog';       
+dataset = 'blog';       
 % dataset = 'music';                    
 % dataset = 'telemonitoring-total';
 % dataset = 'propulsion';       

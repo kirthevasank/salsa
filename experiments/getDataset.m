@@ -53,11 +53,21 @@ function [Xtr, Ytr, Xte, Yte] = getDataset(dataset)
     case 'blog'
       L = load('datasets/blog.txt');
       L = shuffleData(L);
-      rmIdxs = (mean(abs(L)) < .11)';
-      L = L(:, ~rmIdxs);
       trIdxs = (1:700)'; teIdxs = (701:1388)';
-      label = 92; attrs = (1:91)';
+      Xstd = std(L(:,1:280));
+      Xmean = mean(L(:,1:280)); 
+      rmIdxs = isnan(Xstd) | isnan(Xmean) | (Xstd<0.1);
+      L = L(:,~rmIdxs);
+      label = size(L,2); attrs = (51:100)';
       [Xtr, Ytr, Xte, Yte] = partitionData(L, attrs, label, trIdxs, teIdxs);
+
+%       L = load('datasets/blog.txt');
+%       L = shuffleData(L);
+%       rmIdxs = (mean(abs(L)) < .11)';
+%       L = L(:, ~rmIdxs);
+%       trIdxs = (1:700)'; teIdxs = (701:1388)';
+%       label = 92; attrs = (1:91)';
+%       [Xtr, Ytr, Xte, Yte] = partitionData(L, attrs, label, trIdxs, teIdxs);
     
     case 'galaxy'
       load('datasets/lrgReg.mat');
