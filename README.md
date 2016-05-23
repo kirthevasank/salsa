@@ -12,10 +12,10 @@ regression using additive approximations. For more details read our paper below.
 - experiments/realDemo.m demonstrates how to use our method on the datasets.
 
 ### Citation
-If you use this library in your academic work please cite our paper (pre-print)"
+If you use this library in your academic work please cite the following paper:
 "Additive Approximations in High Dimensional Nonparametric Regression via the SALSA"
 Kirthevasan Kandasamy, Yaoliang Yu.
-The paper is available at http://www.cs.cmu.edu/~kkandasa/pubs/kandasamy15salsa.pdf.
+International Conference on Machine Learning (ICML) 2016.
 
 ### License
 This software is released under GNU GPL v3(>=) License. Please read LICENSE.txt for
